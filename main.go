@@ -28,7 +28,7 @@ func wsHandler(ws *websocket.Conn) {
 		log.Println("Connection is closed")
 	}()
 	go func() {
-		for {
+		for timeout < 5 {
 			websocket.Message.Receive(ws, &buffer)
 			if buffer != nil {
 				count++
