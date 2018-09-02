@@ -1,6 +1,5 @@
 // オブジェクト生成
-var socket = new WebSocket("ws://127.0.0.1:9000/ws");
-
+var socket = new WebSocket("ws://"+ location.hostname +"/ws");
 // 接続
 socket.addEventListener("open", function(e){
   document.getElementById("status").innerHTML = "Connection is opened";
