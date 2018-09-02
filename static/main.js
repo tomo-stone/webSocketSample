@@ -7,9 +7,16 @@ socket.addEventListener("open", function(e){
   socket.send("Connected to crient");
 });
 
+// 切断
+window.unload = function(){
+  socket.send(".");
+  socket.close();
+};
+
 // メッセージ
 socket.addEventListener("message", function(e){
   document.getElementById("clock").innerHTML = "<p>"+e.data+"</p>" ;
+  socket.send("alive");
   count++;
 });
 
